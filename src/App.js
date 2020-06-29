@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Form from './components/Form';
+import List from './components/List';
 
 function App() {
   const [search, setSearch] = useState('');
@@ -21,6 +22,9 @@ function App() {
         <div className='jumbotron'>
           <p className='lead text-center'>ReactImages</p>
           <Form setSearch={setSearch} />
+        </div>
+        <div className='row justify-content-center'>
+          <List images={images} />
         </div>
       </div>
     </>
