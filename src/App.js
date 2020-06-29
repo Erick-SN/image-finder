@@ -5,6 +5,8 @@ import List from './components/List';
 function App() {
   const [search, setSearch] = useState('');
   const [images, setImages] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [pages, setPages] = useState(1);
   useEffect(() => {
     const getData = async () => {
       if (search === '') return;
@@ -13,6 +15,7 @@ function App() {
       const URL = `https://pixabay.com/api/?key=${API_KEY}&q=${search}&per_page=${IMAGE_PAGES}`;
       const response = await fetch(URL).then((response) => response.json());
       setImages(response.hits);
+      setPages(Math.ceil(response.totalHits / IMAGE_PAGES));
     };
     getData();
   }, [search]);
