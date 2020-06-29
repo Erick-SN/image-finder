@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Error from './Error';
-const Form = () => {
+const Form = ({ setSearch }) => {
   const [word, setWord] = useState('');
   const [error, setError] = useState(false);
   const onSubmit = (e) => {
@@ -10,6 +10,7 @@ const Form = () => {
       return;
     }
     setError(false);
+    setSearch(word);
   };
   return (
     <>
