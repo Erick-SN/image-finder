@@ -1,9 +1,15 @@
 import React from 'react';
+import Form from './components/Form';
 
 function App() {
   return (
     <>
-      <h1>ImageFinder</h1>
+      <div className='container'>
+        <div className='jumbotron'>
+          <p className='lead text-center'>ReactImages</p>
+          <Form />
+        </div>
+      </div>
     </>
   );
 }
